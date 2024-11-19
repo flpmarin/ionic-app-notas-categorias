@@ -22,6 +22,8 @@ import { trashBin } from 'ionicons/icons';
 import CardCategory from '@/components/CardCategory.vue';
 import { IAsignatura } from '@/interfaces/IAsignatura';
 import { Ref, ref } from 'vue';
+import classroomImage from '@/assets/img/classroom.jpg';
+
 
 const asignaturas: Ref<Array<IAsignatura>> = ref([
   {
@@ -29,7 +31,7 @@ const asignaturas: Ref<Array<IAsignatura>> = ref([
     subtitle: 'Profesor: Alejandro',
     description: 'Desarrollo y diseño de frontales',
     alt: 'Imagen de desarrollo de interfaces',
-    img: 'https://ionicframework.com/docs/img/demos/card-media.png'
+    img: classroomImage
   },
   {
     title: 'Desarrollo de Interfaces',

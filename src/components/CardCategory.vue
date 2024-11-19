@@ -1,6 +1,6 @@
 <template>
 
-    <ion-card @click="setIsOpen()">
+    <ion-card @click="goCategory()">
       <img :alt="props.alt" :src="props.img" />
       <ion-card-header>
         <ion-card-title>{{ props.title }}</ion-card-title>
@@ -11,23 +11,22 @@
         {{ props.description }}
       </ion-card-content>
     </ion-card>
-    <Modal :color="'primary'" :title="'Título'" :isOpenModal="isOpen" @close="cerrar()" />
     
   </template>
   
   <script lang="ts" setup>
+    import router from '@/router';
     import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/vue';
-    import { defineProps, Ref, ref } from 'vue';
-    import Modal from './Modal.vue';
+    import { defineProps } from 'vue';
+
     
-    const props = defineProps(['title', 'subtitle', 'description', 'img', 'alt']);
-    const isOpen:Ref<boolean> = ref(false);
-    const cerrar = () => {
-      isOpen.value = false;
+    const props = defineProps(['title', 'subtitle', 'description', 'img', 'alt', 'id']);
+
+
+    const goCategory = () => {
+      router.push({name: 'Category', params:{id: props.id}});
     }
-    const setIsOpen = () => {
-        isOpen.value = true;
-      }
+
   </script>
  <style scoped>
 

@@ -5,6 +5,7 @@
       <div class="categorias">
 
         <CardCategory v-for="(elm, index) in asignaturas" :key="index"
+          :id="elm.id"
           :title="elm.title" 
           :subtitle="elm.subtitle"
           :description="elm.description" 
@@ -27,6 +28,7 @@ import classroomImage from '@/assets/img/classroom.jpg';
 
 const asignaturas: Ref<Array<IAsignatura>> = ref([
   {
+    id: 1,
     title: 'Desarrollo de Interfaces',
     subtitle: 'Profesor: Alejandro',
     description: 'Desarrollo y diseño de frontales',
@@ -34,6 +36,7 @@ const asignaturas: Ref<Array<IAsignatura>> = ref([
     img: classroomImage
   },
   {
+    id: 2,
     title: 'Desarrollo de Interfaces',
     subtitle: 'Profesor: Alejandro',
     description: 'Desarrollo y diseño de frontales',

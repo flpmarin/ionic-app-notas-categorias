@@ -26,7 +26,7 @@
   <script lang="ts" setup>
   //props --->título,
     import { IonButtons, IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
-    import { ref, defineProps, defineEmits } from 'vue';
+    import { defineProps, defineEmits } from 'vue';
   
     const props = defineProps(['title', 'color' ,'isOpenModal']);
     const emits = defineEmits(['close']);
@@ -35,7 +35,4 @@
       emits('close');
     }
 
-    const isOpen = ref(false);
-  
-    const setOpen = (open: boolean) => (isOpen.value = open);
   </script>

@@ -6,7 +6,7 @@
           <ion-toolbar :color="props.color">
             <ion-title>{{props.title}}</ion-title>
             <ion-buttons slot="end">
-              <ion-button @click="closeModel()">Cerrar</ion-button>
+              <ion-button @click="cerrarModal()">Cerrar</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
@@ -29,10 +29,10 @@
     import { defineProps, defineEmits } from 'vue';
   
     const props = defineProps(['title', 'color' ,'isOpenModal']);
-    const emits = defineEmits(['close']);
+    const emits = defineEmits(['closeModal']);
 
-    const closeModel = () => {
-      emits('close');
+    const cerrarModal = () => {
+      emits('closeModal');
     }
 
   </script>

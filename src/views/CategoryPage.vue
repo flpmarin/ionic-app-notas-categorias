@@ -3,8 +3,8 @@
         <ion-content class="ion-padding">
             <ion-button @click="createNote">Crear nota</ion-button>
             <ion-button>Actualizar nota</ion-button>
-            <ion-button>Eliminar nota</ion-button>
-            <ModalForm :title="'Crear nota'" :color="'primary'" :isOpenModal="openCreate"/>
+            <ion-button :color="'danger'">Eliminar nota</ion-button>
+            <ModalForm :title="'Crear nota'" :color="'primary'" :isOpenModal="openCreate" @closeModal="closeModalBtnCerrar()"/>
         </ion-content>
     </ion-page>
 
@@ -23,7 +23,9 @@ const openCreate: Ref<boolean> = ref(false);
 const createNote = () => {
     openCreate.value = true;
 }
-
+const closeModalBtnCerrar = () => {
+    openCreate.value = false;
+}
 // const service = new CategoryService();
 // const route = useRoute();   
 // const id = route.params.id;

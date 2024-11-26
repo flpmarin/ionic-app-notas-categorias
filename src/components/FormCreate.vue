@@ -1,16 +1,19 @@
 // formulario con titulo y descripcion con text area y boton crear, v-modelear los 2 datos de titulo y descripcion
 <template>
-    <ion-list>
-        <ion-item>
-            <ion-label position="floating">Titulo</ion-label>
-            <ion-textarea v-model="titulo"></ion-textarea>
-        </ion-item>
-        <ion-item>
-            <ion-label position="floating">Descripción</ion-label>
-            <ion-textarea v-model="descripcion"></ion-textarea>
-        </ion-item>
-        <ion-button @click="crearTarea">Crear</ion-button>
+    <ion-content>
+        <ion-textarea label="Titulo" v-model="titulo"></ion-textarea>
+        <ion-textarea label="Descripcion" v-model="descripcion"></ion-textarea>
+        <ion-button expand="block">Crear nota</ion-button>
+    </ion-content>
+</template>
+
+<script lang="ts" setup>
+import { IonContent, IonTextarea, IonButton } from '@ionic/vue';
+import { ref } from 'vue';
+
+const titulo = ref('');
+const descripcion = ref('');
 
 
-<script lang="ts">
-  import { IonList, IonItem, IonButton  } from '@ionic/vue';
+</script>
+    

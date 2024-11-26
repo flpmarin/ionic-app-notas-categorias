@@ -4,7 +4,9 @@
             <ion-button @click="createNote">Crear nota</ion-button>
             <ion-button>Actualizar nota</ion-button>
             <ion-button :color="'danger'">Eliminar nota</ion-button>
-            <ModalForm :title="'Crear nota'" :color="'primary'" :isOpenModal="openCreate" @closeModal="closeModalBtnCerrar()"/>
+            <ModalForm :title="'Crear nota'" :color="'primary'" :isOpenModal="openCreate" @closeModal="closeModalBtnCerrar()">
+                <FormCreate/>
+            </ModalForm>
         </ion-content>
     </ion-page>
 
@@ -16,7 +18,7 @@ import { IonPage, IonContent, IonButton } from '@ionic/vue';
 import {ref, Ref } from 'vue';
 // import CategoryService from '@/services/CategoryService';
 import ModalForm from '@/components/ModalForm.vue';
-
+import FormCreate from '@/components/FormCreate.vue';
 
 
 const openCreate: Ref<boolean> = ref(false);

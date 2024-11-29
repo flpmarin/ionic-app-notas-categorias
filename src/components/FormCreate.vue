@@ -16,10 +16,9 @@ const service = new CategoryService();
 
 const sendForm =  async ()  => {
     const response = await service.createNotes(
-        titulo: titulo,
-        descripcion: descripcion,
-        props.id,
-    )
+        titulo.value, 
+        descripcion.value, 
+        props.id);
     if(response){
         console.log('Nota creada');
     }
